@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>思玥的生活图鉴</title>
+<meta name="description" content="陈思玥（Siyue）的个人主页：猫、厨房、钓鱼浮潜、滑雪和麻将。中文・日本語・English">
+<meta property="og:title" content="Siyue · 思玥的生活图鉴">
+<meta property="og:description" content="猫、厨房、钓鱼浮潜、滑雪和麻将。中文・日本語・English">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F1F2EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111D28'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-style='italic' font-size='40' fill='%23F1F2EF' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Instrument+Sans:wght@400;500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500&family=Noto+Serif+SC:wght@500;600&family=Noto+Sans+SC:wght@400;500&family=DM+Mono:wght@400&display=swap">
+<style>
+html,body{margin:0}
+[hidden]{display:none!important}
+/* Layout: a quiet personal magazine. Each chapter opens with one large serif kanji (猫 食 海 雪 雀) that reads the same in all three languages; photos sit in an asymmetric 12-column grid with sharp corners and small captions. */
+:root{
+  --paper:#F1F2EF;
+  --surface:#FAFAF8;
+  --ink:#111D28;
+  --muted:#5C6771;
+  --line:#D3D8D7;
+  --accent:#A9351F;     /* bandana red, used sparingly */
+  --sea:#1C5B6A;
+  --veil:rgba(7,22,34,.62);
+  --on-photo:#FFFFFF;
+
+  --f-latin-head:"Bodoni Moda";
+  --f-latin-body:"Instrument Sans";
+  --f-head:var(--f-latin-head),"Noto Serif SC","Songti SC",serif;
+  --f-body:var(--f-latin-body),"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --f-mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B141C; --surface:#111D27; --ink:#E8EBE8; --muted:#95A1AA; --line:#233240;
+    --accent:#E06B51; --sea:#62AEBD; --veil:rgba(3,10,16,.66); --on-photo:#FFFFFF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B141C; --surface:#111D27; --ink:#E8EBE8; --muted:#95A1AA; --line:#233240;
+  --accent:#E06B51; --sea:#62AEBD; --veil:rgba(3,10,16,.66); --on-photo:#FFFFFF;
+  color-scheme:dark;
+}
+:root:lang(ja){
+  --f-head:var(--f-latin-head),"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:var(--f-latin-body),"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+:root:lang(en){
+  --f-head:var(--f-latin-head),"Noto Serif SC",serif;
+  --f-body:var(--f-latin-body),"Noto Sans SC",sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--f-body); font-size:16px; line-height:1.8;
+  padding-inline:24px; padding-block:0 64px;
+  -webkit-font-smoothing:antialiased;
+}
+:root:lang(en) body{line-height:1.65}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+h1,h2,h3{font-weight:500; text-wrap:balance}
+img,video{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+:focus-visible{outline:2px solid var(--accent); outline-offset:4px}
+.wrap{max-width:1160px; margin-inline:auto}
+main{display:flex; flex-direction:column; gap:128px; margin-top:128px}
+@media (max-width:700px){ main{margin-top:96px} }
+.i18n-fade main, .i18n-fade .hero{opacity:.15}
+main, .hero{transition:opacity .18s ease}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:10;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  margin-inline:-24px; padding:14px 24px;
+}
+.bar .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px}
+.mark{font-family:"Bodoni Moda",serif; font-style:italic; font-size:26px; line-height:1}
+.nav{display:flex; gap:26px; font-size:14px; color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.langs{display:flex; border:1px solid var(--line); border-radius:999px; padding:3px}
+.langs button{
+  font:inherit; font-size:13px; letter-spacing:.04em; color:var(--muted);
+  background:none; border:0; border-radius:999px; padding:5px 13px; cursor:pointer;
+}
+.langs button[aria-pressed="true"]{background:var(--ink); color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero{
+  display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:64px; align-items:end;
+  padding-block:72px 0;
+}
+.eyebrow{font-family:var(--f-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.hero h1{
+  font-family:"Bodoni Moda",serif; font-style:italic; font-weight:400;
+  font-size:clamp(110px,19vw,240px); line-height:.82; letter-spacing:-.03em; margin-top:22px;
+}
+.hero h1 i{font-style:normal; color:var(--accent)}
+.names{margin-top:18px; font-family:var(--f-head); font-size:19px; letter-spacing:.06em; color:var(--muted)}
+.lede{margin-top:36px; font-family:var(--f-head); font-size:clamp(19px,2vw,23px); line-height:1.75; max-width:27em}
+:root:lang(en) .lede{line-height:1.5; font-size:clamp(20px,2.2vw,25px)}
+.facts{
+  margin-top:44px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:32px;
+}
+.facts div{border-top:1px solid var(--line); padding-block:12px; display:flex; flex-direction:column; gap:2px; min-width:0}
+.facts dt{font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.facts dd{font-size:15px}
+
+.cover{display:flex; flex-direction:column; gap:12px; min-width:0}
+.cover .frame{overflow:hidden; border-radius:2px; background:var(--line)}
+.cover img{width:100%; height:auto; aspect-ratio:4/5; object-fit:cover}
+.credit{display:flex; justify-content:space-between; gap:12px; font-family:var(--f-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+
+/* ---------- chapters ---------- */
+section{display:flex; flex-direction:column; gap:40px; scroll-margin-top:84px}
+.chap{display:grid; grid-template-columns:auto minmax(0,1fr); gap:28px; align-items:end; border-bottom:1px solid var(--line); padding-bottom:22px}
+.glyph{font-family:"Shippori Mincho","Noto Serif SC",serif; font-weight:600; font-size:clamp(84px,11vw,132px); line-height:.9; color:var(--accent)}
+.chap h2{font-family:var(--f-head); font-size:clamp(30px,4vw,44px); line-height:1.15}
+.chap p{color:var(--muted); font-size:15px; margin-top:8px}
+.intro{font-family:var(--f-head); font-size:19px; line-height:1.8; max-width:32em}
+:root:lang(en) .intro{line-height:1.55; font-size:20px}
+
+.g{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:40px 22px}
+.c4{grid-column:span 4} .c5{grid-column:span 5} .c7{grid-column:span 7} .c8{grid-column:span 8} .c12{grid-column:span 12}
+figure{margin:0; display:flex; flex-direction:column; gap:14px; min-width:0}
+.frame{overflow:hidden; border-radius:2px; background:var(--line)}
+figure .frame img, figure .frame video{width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+figure:hover .frame img{transform:scale(1.025)}
+.a45 .frame{aspect-ratio:4/5}
+.a85 .frame{aspect-ratio:8/5}
+.a75 .frame{aspect-ratio:28/25}
+.a169 .frame{aspect-ratio:16/9}
+figcaption{display:flex; flex-direction:column; gap:4px}
+figcaption h3{font-family:var(--f-head); font-size:20px; line-height:1.35}
+figcaption p{font-size:15px; color:var(--muted); line-height:1.7; max-width:34em}
+.spec{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; font-family:var(--f-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sea)}
+.spec .bin{font-family:"Bodoni Moda",serif; font-style:italic; font-size:15px; letter-spacing:0; text-transform:none; color:var(--muted)}
+
+.profile{border-top:1px solid var(--ink); padding-top:18px; display:flex; flex-direction:column; gap:16px; min-width:0}
+.profile h3{font-family:var(--f-head); font-size:22px}
+.profile dl{display:flex; flex-direction:column}
+.profile div{display:grid; grid-template-columns:minmax(0,5.5em) minmax(0,1fr); gap:14px; padding-block:11px; border-bottom:1px solid var(--line)}
+:root:lang(en) .profile div{grid-template-columns:minmax(0,7.5em) minmax(0,1fr)}
+.profile dt{font-family:var(--f-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); padding-top:4px}
+.profile dd{font-size:15px; line-height:1.6}
+
+/* sea banner */
+.banner{position:relative; overflow:hidden; border-radius:2px; height:clamp(280px,40vw,480px); background:var(--sea)}
+.banner img{width:100%; height:100%; object-fit:cover; object-position:center 64%}
+.banner .over{
+  position:absolute; inset:auto 0 0 0; padding:36px; display:grid; grid-template-columns:auto minmax(0,1fr); gap:24px; align-items:end;
+  background:linear-gradient(to top, var(--veil), transparent); color:var(--on-photo);
+}
+.banner .glyph{color:var(--on-photo)}
+.banner h2{font-family:var(--f-head); font-size:clamp(30px,4vw,44px); line-height:1.15}
+.banner p{font-size:15px; opacity:.88; margin-top:8px}
+
+.duo{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:64px; align-items:start}
+.stack{display:flex; flex-direction:column; gap:40px}
+.invite{border-top:1px solid var(--ink); padding-top:18px; display:flex; flex-direction:column; gap:8px}
+.invite h3{font-family:var(--f-head); font-size:26px}
+.invite p{color:var(--muted); font-size:15px}
+
+footer{margin-top:128px; border-top:1px solid var(--line); padding-top:28px; display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:16px; color:var(--muted); font-size:14px}
+footer .mark{color:var(--ink); font-size:34px}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .nav{display:none}
+  .hero{grid-template-columns:minmax(0,1fr); gap:48px; padding-top:48px}
+  .cover{max-width:460px}
+  .duo{grid-template-columns:minmax(0,1fr); gap:128px}
+}
+@media (max-width:700px){
+  body{padding-inline:18px}
+  .bar{margin-inline:-18px; padding-inline:18px}
+  main{gap:96px}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .g{grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px 12px}
+  .g > *{grid-column:span 1}
+  .g > .m2{grid-column:span 2}
+  .g .a85 .frame, .g .a75 .frame{aspect-ratio:4/3}
+  .k-laz{order:1} .k-wing{order:2} .k-fried{order:3}
+  .chap{gap:18px}
+  .banner .over{padding:22px; gap:16px}
+  figcaption h3{font-size:18px}
+  figcaption p{font-size:14px}
+  footer{margin-top:96px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">Siyue</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#cat" data-t="nav.cat"></a>
+      <a href="#kitchen" data-t="nav.kitchen"></a>
+      <a href="#sea" data-t="nav.sea"></a>
+      <a href="#snow" data-t="nav.snow"></a>
+      <a href="#mahjong" data-t="nav.mahjong"></a>
+    </nav>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" id="lang-zh" data-lang="zh" aria-pressed="false">中文</button>
+      <button type="button" id="lang-ja" data-lang="ja" aria-pressed="false">日本語</button>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <section class="hero" aria-label="Siyue">
+    <div>
+      <div class="eyebrow" data-t="hero.eyebrow"></div>
+      <h1>Siyue<i>.</i></h1>
+      <div class="names">陈思玥 ／ チン・シゲツ</div>
+      <p class="lede" data-t="hero.lede"></p>
+      <dl class="facts">
+        <div><dt data-t="f.from.k"></dt><dd data-t="f.from.v"></dd></div>
+        <div><dt data-t="f.base.k"></dt><dd data-t="f.base.v"></dd></div>
+        <div><dt data-t="f.lang.k"></dt><dd>中文 · 日本語 · English</dd></div>
+        <div><dt data-t="f.like.k"></dt><dd data-t="f.like.v"></dd></div>
+      </dl>
+    </div>
+    <figure class="cover">
+      <div class="frame"><img src="media/cover.jpg" data-alt="alt.cover" alt="" width="1050" height="1400"></div>
+      <figcaption class="credit"><span data-t="hero.cover"></span><span>2026</span></figcaption>
+    </figure>
+  </section>
+
+  <main>
+
+    <!-- CAT -->
+    <section id="cat">
+      <div class="chap"><span class="glyph" aria-hidden="true">猫</span><div><h2 data-t="cat.title"></h2><p data-t="cat.sub"></p></div></div>
+      <div class="g">
+        <figure class="c5 a45 m2">
+          <div class="frame"><img src="media/cat-lamp.jpg" data-alt="alt.lamp" alt="" loading="lazy" width="1050" height="1400"></div>
+          <figcaption><h3 data-t="cat.lamp.t"></h3><p data-t="cat.lamp.d"></p></figcaption>
+        </figure>
+        <figure class="c7 a75 m2">
+          <div class="frame"><img src="media/cat-sleep.jpg" data-alt="alt.sleep" alt="" loading="lazy" width="1400" height="1050"></div>
+          <figcaption><h3 data-t="cat.sleep.t"></h3><p data-t="cat.sleep.d"></p></figcaption>
+        </figure>
+        <figure class="c4 a45">
+          <div class="frame"><img src="media/cat-sit.jpg" data-alt="alt.sit" alt="" loading="lazy" width="1050" height="1400"></div>
+          <figcaption><h3 data-t="cat.sit.t"></h3><p data-t="cat.sit.d"></p></figcaption>
+        </figure>
+        <figure class="c4 a45">
+          <div class="frame"><img src="media/cat-kitchen.jpg" data-alt="alt.night" alt="" loading="lazy" width="1050" height="1400"></div>
+          <figcaption><h3 data-t="cat.night.t"></h3><p data-t="cat.night.d"></p></figcaption>
+        </figure>
+        <div class="profile c4 m2">
+          <h3 data-t="cat.p.title"></h3>
+          <dl>
+            <div><dt data-t="cat.p.coat.k"></dt><dd data-t="cat.p.coat.v"></dd></div>
+            <div><dt data-t="cat.p.skill.k"></dt><dd data-t="cat.p.skill.v"></dd></div>
+            <div><dt data-t="cat.p.where.k"></dt><dd data-t="cat.p.where.v"></dd></div>
+            <div><dt data-t="cat.p.mood.k"></dt><dd data-t="cat.p.mood.v"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- KITCHEN -->
+    <section id="kitchen">
+      <div class="chap"><span class="glyph" aria-hidden="true">食</span><div><h2 data-t="k.title"></h2><p data-t="k.sub"></p></div></div>
+      <p class="intro" data-t="k.intro"></p>
+      <div class="g">
+        <figure class="c8 a85 m2">
+          <div class="frame"><img src="media/montblanc.jpg" data-alt="alt.mont" alt="" loading="lazy" width="1400" height="1050"></div>
+          <figcaption><h3 data-t="k.mont.t"></h3><p data-t="k.mont.d"></p></figcaption>
+        </figure>
+        <figure class="c4 a45 k-wing">
+          <div class="frame"><img src="media/wings.jpg" data-alt="alt.wings" alt="" loading="lazy" width="1050" height="1400"></div>
+          <figcaption><h3 data-t="k.wing.t"></h3><p data-t="k.wing.d"></p></figcaption>
+        </figure>
+        <figure class="c7 a75 m2 k-laz">
+          <div class="frame"><img src="media/laziji.jpg" data-alt="alt.laziji" alt="" loading="lazy" width="745" height="502"></div>
+          <figcaption><h3 data-t="k.laz.t"></h3><p data-t="k.laz.d"></p></figcaption>
+        </figure>
+        <figure class="c5 a45 k-fried">
+          <div class="frame"><img src="media/fried.jpg" data-alt="alt.fried" alt="" loading="lazy" width="1400" height="1050"></div>
+          <figcaption><h3 data-t="k.fried.t"></h3><p data-t="k.fried.d"></p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SEA -->
+    <section id="sea">
+      <div class="banner">
+        <img src="media/sea.jpg" data-alt="alt.sea" alt="" loading="lazy" width="1050" height="1400">
+        <div class="over"><span class="glyph" aria-hidden="true">海</span><div><h2 data-t="sea.title"></h2><p data-t="sea.sub"></p></div></div>
+      </div>
+      <p class="intro" data-t="sea.intro"></p>
+      <div class="g">
+        <figure class="c8 a85 m2">
+          <div class="frame"><img src="media/madai.jpg" data-alt="alt.madai" alt="" loading="lazy" width="1400" height="1050"></div>
+          <div class="spec"><span data-t="sea.madai.s"></span><span class="bin">Pagrus major</span></div>
+          <figcaption><h3 data-t="sea.madai.t"></h3><p data-t="sea.madai.d"></p></figcaption>
+        </figure>
+        <figure class="c4 a45">
+          <div class="frame"><img src="media/fugu.jpg" data-alt="alt.fugu" alt="" loading="lazy" width="1050" height="1400"></div>
+          <div class="spec"><span data-t="sea.fugu.s"></span><span class="bin">Takifugu sp.</span></div>
+          <figcaption><h3 data-t="sea.fugu.t"></h3><p data-t="sea.fugu.d"></p></figcaption>
+        </figure>
+        <figure class="c4 a45">
+          <div class="frame"><img src="media/kasago.jpg" data-alt="alt.kasago" alt="" loading="lazy" width="1050" height="1400"></div>
+          <div class="spec"><span data-t="sea.kasago.s"></span><span class="bin">Sebastiscus marmoratus</span></div>
+          <figcaption><h3 data-t="sea.kasago.t"></h3><p data-t="sea.kasago.d"></p></figcaption>
+        </figure>
+        <figure class="c8 a85 m2">
+          <div class="frame"><video src="media/snorkel.mp4" poster="media/snorkel-poster.jpg" autoplay muted loop playsinline preload="metadata" data-aria="alt.video"></video></div>
+          <div class="spec"><span data-t="sea.snork.s"></span></div>
+          <figcaption><h3 data-t="sea.snork.t"></h3><p data-t="sea.snork.d"></p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SNOW + MAHJONG -->
+    <div class="duo">
+      <section id="snow">
+        <div class="chap"><span class="glyph" aria-hidden="true">雪</span><div><h2 data-t="snow.title"></h2><p data-t="snow.sub"></p></div></div>
+        <figure class="a45">
+          <div class="frame"><img src="media/snow.jpg" data-alt="alt.snow" alt="" loading="lazy" width="1050" height="1400"></div>
+          <figcaption><h3 data-t="snow.t"></h3><p data-t="snow.d"></p></figcaption>
+        </figure>
+      </section>
+      <section id="mahjong">
+        <div class="chap"><span class="glyph" aria-hidden="true">雀</span><div><h2 data-t="mj.title"></h2><p data-t="mj.sub"></p></div></div>
+        <div class="stack">
+          <figure class="a169">
+            <div class="frame"><img src="media/mahjong.jpg" data-alt="alt.mj" alt="" loading="lazy" width="1400" height="788"></div>
+            <figcaption><h3 data-t="mj.t"></h3><p data-t="mj.d"></p></figcaption>
+          </figure>
+          <div class="invite"><h3 data-t="inv.t"></h3><p data-t="inv.d"></p></div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="mark">Siyue</span>
+    <span data-t="foot"></span>
+  </footer>
+</div>
+
+<script>
+const T = {
+  "nav.cat":{zh:"猫",ja:"猫",en:"Cat"},
+  "nav.kitchen":{zh:"厨房",ja:"キッチン",en:"Kitchen"},
+  "nav.sea":{zh:"海边",ja:"海",en:"Sea"},
+  "nav.snow":{zh:"雪山",ja:"雪山",en:"Snow"},
+  "nav.mahjong":{zh:"麻将",ja:"麻雀",en:"Mahjong"},
+
+  "hero.eyebrow":{zh:"生活图鉴 · Personal",ja:"生活図鑑 · Personal",en:"A field guide to Siyue"},
+  "hero.lede":{
+    zh:"在东京生活的重庆人。平日和语言、游戏打交道；假期去海边钓鱼、下水浮潜，冬天上雪山。家里有一只猫，厨房里总在做点什么。",
+    ja:"重慶生まれ、東京暮らし。普段は言葉とゲームに囲まれて過ごし、休みの日は海で釣りやシュノーケリング、冬は雪山へ。家には猫が一匹、キッチンではいつも何かを作っています。",
+    en:"Born in Chongqing, living in Tokyo. Weekdays belong to languages and games; days off go to fishing, snorkeling and, in winter, the slopes. There is a cat at home and almost always something on the stove."},
+  "f.from.k":{zh:"来自",ja:"出身",en:"From"},
+  "f.from.v":{zh:"重庆",ja:"重慶",en:"Chongqing"},
+  "f.base.k":{zh:"现居",ja:"拠点",en:"Based in"},
+  "f.base.v":{zh:"东京",ja:"東京",en:"Tokyo"},
+  "f.lang.k":{zh:"语言",ja:"言語",en:"Languages"},
+  "f.like.k":{zh:"喜欢",ja:"好きなもの",en:"Into"},
+  "f.like.v":{zh:"剧情向游戏、二次元",ja:"ストーリー重視のゲーム、アニメ",en:"Story-driven games, anime"},
+  "hero.cover":{zh:"封面 · 出航",ja:"表紙 · 出航",en:"Cover · Setting sail"},
+
+  "cat.title":{zh:"我家的猫",ja:"うちの猫",en:"The cat"},
+  "cat.sub":{zh:"家里真正的主人",ja:"この家の本当の主",en:"The real head of the household"},
+  "cat.lamp.t":{zh:"书桌监工",ja:"デスクの監督",en:"Desk supervisor"},
+  "cat.lamp.d":{zh:"台灯一开就跳上来，检查今天有没有好好写论文。",ja:"ライトをつけると飛び乗ってきて、論文が進んでいるかチェックしに来る。",en:"Jumps up the moment the lamp goes on, to check how the thesis is going."},
+  "cat.sleep.t":{zh:"睡成一团",ja:"まるくなって熟睡",en:"Out cold"},
+  "cat.sleep.d":{zh:"粉色肉垫全露在外面，叫也叫不醒。",ja:"ピンクの肉球が丸見え。呼んでも起きない。",en:"Pink paw pads on full display. Will not wake up."},
+  "cat.sit.t":{zh:"大爷坐",ja:"おじさん座り",en:"The armchair pose"},
+  "cat.sit.d":{zh:"表情：你看什么看。",ja:"表情は「なに見てるの」。",en:"Expression: what are you looking at?"},
+  "cat.night.t":{zh:"深夜巡逻",ja:"深夜のパトロール",en:"Night patrol"},
+  "cat.night.d":{zh:"半夜在厨房台面上走来走去，眼睛会发光。",ja:"夜中にキッチンカウンターを歩き回る。目が光る。",en:"Paces the kitchen counter after dark. The eyes glow."},
+  "cat.p.title":{zh:"猫咪档案",ja:"プロフィール",en:"Profile"},
+  "cat.p.coat.k":{zh:"花色",ja:"毛色",en:"Coat"},
+  "cat.p.coat.v":{zh:"白底灰花，尾巴一圈圈虎斑",ja:"白地にグレーのぶち、しっぽはしましま",en:"White with grey patches and a striped tabby tail"},
+  "cat.p.skill.k":{zh:"特长",ja:"特技",en:"Talents"},
+  "cat.p.skill.v":{zh:"大爷坐、露肉垫睡觉",ja:"おじさん座り、肉球を見せて寝ること",en:"Sitting like a person, sleeping paws-up"},
+  "cat.p.where.k":{zh:"出没地点",ja:"出没スポット",en:"Found at"},
+  "cat.p.where.v":{zh:"书桌、床上、厨房台面",ja:"机、ベッド、キッチンカウンター",en:"The desk, the bed, the kitchen counter"},
+  "cat.p.mood.k":{zh:"性格",ja:"性格",en:"Temperament"},
+  "cat.p.mood.v":{zh:"很淡定，偶尔嫌弃人类",ja:"マイペース。たまに人間を冷めた目で見る",en:"Unbothered, occasionally unimpressed by humans"},
+
+  "k.title":{zh:"厨房日记",ja:"キッチン日記",en:"Kitchen notes"},
+  "k.sub":{zh:"川菜、炸物、甜点，都自己来",ja:"四川料理も揚げものもスイーツも、全部手作り",en:"Sichuan dishes, fried things and desserts, all homemade"},
+  "k.intro":{
+    zh:"重庆长大的胃，做饭不怕麻烦。辣的、炸的、要裱花的都愿意试，做出来大多会先拍一张再吃。",
+    ja:"重慶育ちの胃袋なので、手間のかかる料理も苦になりません。辛いもの、揚げもの、絞り袋を使うお菓子まで。できあがったら、まず一枚撮ってから食べます。",
+    en:"A Chongqing appetite means no recipe is too much trouble. Spicy, deep-fried or piped by hand, it all gets photographed before it gets eaten."},
+  "k.mont.t":{zh:"栗子蒙布朗",ja:"栗のモンブラン",en:"Chestnut Mont Blanc"},
+  "k.mont.d":{zh:"栗子泥一条条挤上去，奶油从里面流出来的那一刻最好看。",ja:"マロンクリームを一本ずつ絞って。中のクリームがとろけ出る瞬間がいちばん好き。",en:"Chestnut cream piped strand by strand. The best moment is when the cream inside starts to spill out."},
+  "k.wing.t":{zh:"鸡翅定食",ja:"手羽の照り焼き定食",en:"Teriyaki wing set"},
+  "k.wing.d":{zh:"照烧鸡翅、炸物、卷心菜丝，米饭撒上黑芝麻。",ja:"照り焼き手羽、揚げもの、千切りキャベツ。ごはんには黒ごま。",en:"Glazed wings, something fried, shredded cabbage, rice with black sesame."},
+  "k.laz.t":{zh:"辣子肥肠",ja:"辣子肥腸（モツの唐辛子炒め）",en:"Lazi feichang, chili-fried pork intestines"},
+  "k.laz.d":{zh:"家乡味。规矩是辣椒要比肥肠多。",ja:"故郷の味。モツより唐辛子が多いのがルール。",en:"The taste of home, Chongqing style. The rule: more chilies than anything else."},
+  "k.fried.t":{zh:"小酥肉",ja:"小酥肉（シャオスーロウ）",en:"Xiao su rou, crispy fried pork"},
+  "k.fried.d":{zh:"配一小碟辣椒面，越吃越停不下来。",ja:"サクサクの豚肉の揚げもの。唐辛子パウダーをつけると手が止まらない。",en:"Bite-sized battered pork, dipped in chili powder. Impossible to stop."},
+
+  "sea.title":{zh:"海边",ja:"海",en:"The sea"},
+  "sea.sub":{zh:"钓鱼和浮潜，一年里最期待的日子",ja:"釣りとシュノーケリング。一年でいちばん楽しみな日",en:"Fishing and snorkeling, the days I look forward to most"},
+  "sea.intro":{
+    zh:"在堤防上一蹲就是一整天。下面是我的钓果记录，还有一段浮潜时拍的视频。",
+    ja:"堤防で一日中粘ることも。釣果の記録と、シュノーケリング中に撮った動画です。",
+    en:"I can spend a whole day on a breakwater. Below is my catch log, plus a clip from underwater."},
+  "sea.madai.s":{zh:"真鲷",ja:"マダイ",en:"Red sea bream"},
+  "sea.madai.t":{zh:"目前最大的一条",ja:"今までで一番大きい一匹",en:"The biggest one so far"},
+  "sea.madai.d":{zh:"两只手才捧得住，之后就进了厨房。",ja:"両手でやっと持てるサイズ。このあとキッチンへ。",en:"It took both hands to hold. It went to the kitchen next."},
+  "sea.fugu.s":{zh:"河豚",ja:"フグ",en:"Pufferfish"},
+  "sea.fugu.t":{zh:"气鼓鼓",ja:"ぷくぷく",en:"Fully inflated"},
+  "sea.fugu.d":{zh:"一出水就把自己吹成了球。",ja:"水から上げた途端、まんまるに。",en:"Turned itself into a ball the second it left the water."},
+  "sea.kasago.s":{zh:"石狗公",ja:"カサゴ",en:"Scorpionfish"},
+  "sea.kasago.t":{zh:"颜色最漂亮的一条",ja:"いちばん色がきれいな一匹",en:"The prettiest catch"},
+  "sea.kasago.d":{zh:"鳍很扎手。顺便看一下 T 恤上的猫。",ja:"ヒレがとにかく痛い。Tシャツの猫にも注目。",en:"Spiny fins, handle with care. Note the cat on the T-shirt."},
+  "sea.snork.s":{zh:"浮潜",ja:"シュノーケリング",en:"Snorkeling"},
+  "sea.snork.t":{zh:"水下的样子",ja:"水の中の景色",en:"Below the surface"},
+  "sea.snork.d":{zh:"水很清，低头就能看到珊瑚。",ja:"水が澄んでいて、下を向けばすぐにサンゴ。",en:"The water is so clear the coral is right there when you look down."},
+
+  "snow.title":{zh:"雪山",ja:"雪山",en:"Snow"},
+  "snow.sub":{zh:"冬天的固定项目",ja:"冬の恒例行事",en:"A winter ritual"},
+  "snow.t":{zh:"单板滑雪",ja:"スノーボード",en:"Snowboarding"},
+  "snow.d":{zh:"蓝天、雪道、一身黑。头盔上的涂鸦很好认。",ja:"青空、ゲレンデ、全身黒。ヘルメットの落書きが目印。",en:"Blue sky, groomed runs, all black. The doodled helmet makes me easy to spot."},
+
+  "mj.title":{zh:"麻将",ja:"麻雀",en:"Mahjong"},
+  "mj.sub":{zh:"四个人凑齐就开桌",ja:"四人そろえば卓を囲む",en:"Four players and we are in"},
+  "mj.t":{zh:"日麻",ja:"リーチ麻雀",en:"Riichi mahjong"},
+  "mj.d":{zh:"自动麻将桌一响，就知道今晚不会早睡。",ja:"全自動卓が動き出したら、今夜は長くなる。",en:"Once the automatic table starts shuffling, it is going to be a late night."},
+  "inv.t":{zh:"一起玩？",ja:"一緒にどう？",en:"Join me?"},
+  "inv.d":{zh:"钓鱼、浮潜、滑雪、打麻将，缺人的时候都可以叫我。",ja:"釣り、シュノーケリング、スノボ、麻雀。人数が足りないときは声をかけてください。",en:"Fishing, snorkeling, snowboarding, mahjong. If you are one player short, call me."},
+
+  "foot":{zh:"这个页面还在慢慢长大。",ja:"このページは少しずつ育っています。",en:"This page is still growing."},
+
+  "alt.cover":{zh:"思玥戴红色头巾、穿海盗服，对着镜头大喊并指向天空",ja:"赤いバンダナに海賊の衣装のシゲツが、空を指さして叫んでいる",en:"Siyue in a red bandana and pirate costume, shouting and pointing upward"},
+  "alt.lamp":{zh:"猫坐在书桌台灯下低着头",ja:"デスクライトの下でうつむく猫",en:"The cat sitting under a desk lamp, head bowed"},
+  "alt.sleep":{zh:"猫蜷在星星图案的毯子里熟睡，露出粉色肉垫",ja:"星柄の毛布で丸くなって眠る猫、ピンクの肉球が見えている",en:"The cat asleep in a star-print blanket, pink paw pads showing"},
+  "alt.sit":{zh:"猫像人一样靠坐在蓝色毯子上，直视镜头",ja:"青い毛布の上で人のように座り、こちらを見つめる猫",en:"The cat sitting upright like a person on a blue blanket, staring at the camera"},
+  "alt.night":{zh:"夜里猫站在厨房台面上，眼睛反光发绿",ja:"夜のキッチンカウンターに立つ猫、目が緑に光っている",en:"The cat on the kitchen counter at night, eyes glowing green"},
+  "alt.mont":{zh:"手工裱花的栗子蒙布朗",ja:"手で絞った栗のモンブラン",en:"A hand-piped chestnut Mont Blanc"},
+  "alt.wings":{zh:"木盘上的照烧鸡翅、炸物、米饭和卷心菜丝",ja:"木のプレートに照り焼き手羽、揚げもの、ごはん、キャベツ",en:"A wooden plate of teriyaki wings, fried food, rice and cabbage"},
+  "alt.laziji":{zh:"一盘满是干辣椒和芝麻的辣子肥肠",ja:"唐辛子とごまがたっぷりの辣子肥腸",en:"A plate of chili-fried pork intestines buried in dried chilies and sesame"},
+  "alt.fried":{zh:"金黄酥脆的小酥肉，旁边一碟辣椒面",ja:"きつね色の小酥肉と唐辛子パウダー",en:"Golden crispy fried pork with a dish of chili powder"},
+  "alt.sea":{zh:"清澈见底的浅海和蓝天",ja:"透き通った浅い海と青空",en:"Clear shallow sea under a blue sky"},
+  "alt.madai":{zh:"思玥在厨房里双手捧着一条大真鲷",ja:"キッチンで大きな真鯛を両手で持つシゲツ",en:"Siyue holding a large red sea bream with both hands"},
+  "alt.fugu":{zh:"思玥在堤防上举起一条鼓起来的河豚",ja:"堤防でふくらんだフグを掲げるシゲツ",en:"Siyue on a breakwater holding up an inflated pufferfish"},
+  "alt.kasago":{zh:"思玥戴墨镜自拍，手里提着一条红色斑点的鱼",ja:"サングラスで自撮りしながら赤いカサゴを持つシゲツ",en:"Siyue in sunglasses taking a selfie with a red spotted scorpionfish"},
+  "alt.video":{zh:"浮潜时在珊瑚上方游泳的水下视频",ja:"サンゴの上を泳ぐシュノーケリングの水中映像",en:"Underwater video of snorkeling over coral"},
+  "alt.snow":{zh:"思玥戴头盔和雪镜，抱着手臂站在晴天的滑雪场",ja:"晴れたゲレンデで腕を組んで立つヘルメットとゴーグル姿のシゲツ",en:"Siyue in a helmet and goggles, arms crossed on a sunny ski slope"},
+  "alt.mj":{zh:"绿色自动麻将桌上正在洗牌",ja:"緑の全自動麻雀卓で牌を混ぜているところ",en:"Tiles being shuffled on a green automatic mahjong table"}
+};
+const TITLES = {zh:"思玥的生活图鉴", ja:"シゲツの生活図鑑", en:"Siyue · A field guide"};
+const HTML_LANG = {zh:"zh-CN", ja:"ja", en:"en"};
+
+function apply(lang, animate){
+  const run = () => {
+    document.documentElement.lang = HTML_LANG[lang];
+    document.querySelectorAll("[data-t]").forEach(el => { const v = T[el.dataset.t]; if (v) el.textContent = v[lang]; });
+    document.querySelectorAll("[data-alt]").forEach(el => { const v = T[el.dataset.alt]; if (v) el.alt = v[lang]; });
+    document.querySelectorAll("[data-aria]").forEach(el => { const v = T[el.dataset.aria]; if (v) el.setAttribute("aria-label", v[lang]); });
+    document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    document.title = TITLES[lang];
+  };
+  const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (animate && !reduce){
+    document.body.classList.add("i18n-fade");
+    setTimeout(() => { run(); document.body.classList.remove("i18n-fade"); }, 180);
+  } else run();
+  try { localStorage.setItem("jill-lang", lang); } catch(e) {}
+}
+
+function initialLang(){
+  const h = (location.hash || "").slice(1);
+  if (T["foot"][h]) return h;
+  try { const s = localStorage.getItem("jill-lang"); if (s && T["foot"][s]) return s; } catch(e) {}
+  const n = (navigator.language || "").toLowerCase();
+  if (n.startsWith("zh")) return "zh";
+  if (n.startsWith("ja")) return "ja";
+  return "en";
+}
+
+document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => apply(b.dataset.lang, true)));
+apply(initialLang(), false);
+</script>
+</body>
+</html>
